@@ -1,0 +1,51 @@
+﻿@using Doga.UI.Entity
+@model IEnumerable<Doga.UI.Models.AdminOrderModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container" pb-5>
+    <h2>Siparişler</h2>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Sipariş No</th>
+                <th>Sipariş Tarihi</th>
+                <th>Sipariş Durumu</th>
+                <th>Toplam Ücret</th>
+                <th>Ürün Sipariş Adeti</th>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.OrderNumber</td>
+                    <td>@item.OrderDate</td>
+                    <td>
+                        @if (item.OrderState == EnumOrderState.Waiting)
+                        {
+                            <span>Onay Bekleniyor</span>
+                        }
+                        else if (item.OrderState == EnumOrderState.Completed)
+                        {
+                            <span>Sipariş Tamamlandı</span>
+                        }
+                    </td>
+                    <td>@item.Count</td>
+                    <td>@item.Total</td>
+
+                    <td>
+                        @Html.ActionLink("Sipariş Detayı", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-sm " })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

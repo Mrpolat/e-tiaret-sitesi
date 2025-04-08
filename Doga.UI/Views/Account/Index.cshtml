@@ -1,0 +1,60 @@
+﻿@using Doga.UI.Entity
+@model IEnumerable<Doga.UI.Models.UserOrderModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Sipariş Bilgileri</h2>
+            <hr />
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Sipariş No
+                        </th>
+                        <th>
+                            Sipariş Tarihi
+                        </th>
+                        <th>
+                            Toplam Ücret
+                        </th>
+                        <th>
+                            Sipariş Durumu      
+                        </th>
+                        <th>
+                            Sipariş Detayı
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.OrderNumber</td>
+                            <td>@item.OrderDate.ToShortDateString()</td>
+                            <td>@item.Total</td>
+                            <td>
+                                @if (item.OrderState == EnumOrderState.Waiting)
+                                {
+                                    <span>Onay Bekleniyor</span>
+                                }
+                                else if (item.OrderState == EnumOrderState.Completed)
+                                {
+                                    <span>Sipariş Tamamlandı</span>
+                                }
+                            </td>
+                            <td>
+                                @Html.ActionLink("Ürün Detay", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

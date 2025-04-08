@@ -1,0 +1,35 @@
+﻿<link href="~/theme/css/donate.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+
+@{
+    ViewBag.Title = "Donation";
+}
+<div class="container">
+    <div class="text">
+        <h1>
+            @User.Identity.Name
+            Bağışı Sen Yap Fidanı Biz Dikelim
+        </h1>
+        <hr />
+        <h3>Bağış tutarını belirleyiniz</h3>
+        <hr />
+      
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-try" aria-hidden="true"></i></span>
+            <input type="text" name="name" value="" />
+            <span class="input-group-text">.00</span>
+        </div>
+        <div class="col-md-offset-2 col-md-10  ">
+            <button type="submit" class="btn btn-primary">  Bağış Yap</button>
+
+        </div>
+  
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

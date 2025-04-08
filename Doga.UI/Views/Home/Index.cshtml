@@ -1,0 +1,123 @@
+﻿@using Doga.UI.Models;
+@model IEnumerable<ProductModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <div class="container text-white">
+        <div id="effect"><h1 class="display-4 ">Bu Senin Gezegenin!</h1></div>
+        <br />
+        <p class="lead">Bir fidan dikilmeden 10 fidan dikilmez</p>
+        <p class="lead">Bir fidan dikilmeden havamız temizlenmez</p>
+        <p class="lead">Bir fidan dikilmeden gelecek olmaz</p>
+        <p class="lead">Sen varsan biz varız</p>
+        <p class="lead">Dünyayı kurtar <strong>KAHRAMAN</strong> ol</p>
+        <p>Geleceğe bırakabileceğimiz tek miras ormanlarımızdır yazımızın devamını okumak için lütfen tıklayınız...</p>
+        
+        <p class="lead">
+            <a class="btn btn-outline-success" href="/Home/Purpose" role="button">Daha Fazla</a>
+        </p>
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+
+
+
+<div class="container pb-5">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class=""></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2" class=""></li>
+        </ol>
+        <div class="position-relative">
+            <div class="mb-5"style="text-align:center; " >
+                <h1>Neden Dünyayı Kurtarmalıyız ?</h1>
+            </div>
+            
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img class="d-block w-100" style="background-size:cover" alt="First slide [800x400]" src="~/Upload/orman_1920x1080.jpg" data-holder-rendered="true">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Böyle Olması için</h5>
+                    <p>Her yetişkin bireyin yılda 1 fidan diktiğini düşünün.</p>
+                </div>
+            </div>
+            <div class="carousel-item active">
+                <img class="d-block w-100" alt="Second slide [800x400]" src="~/Upload/ormanyangını3.jpg" data-holder-rendered="true">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Böyle Değil</h5>
+                    <p>İnsanlar yüzünden yılda kaybedilen brüt ağaç sayısı 15 milyar.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"  alt="Third slide [800x400]" src="~/Upload/hava.jpg" data-holder-rendered="true">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Böyle Olması için</h5>
+                    <p>Bembeyaz bir gökyüzü herkesin hakkıdır..</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"  alt="Third slide [800x400]" src="~/Upload/fabrikabacası_1920x1080 (1).jpg" data-holder-rendered="true">                
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Böyle Değil</h5>
+                    <p>Ciğerleriniz ne soluduğundan haberiniz var mı.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"  alt="Third slide [800x400]" src="~/Upload/deniz_1920x1080.jpg" data-holder-rendered="true">
+               <div class="carousel-caption d-none d-md-block">
+                   <h5>Böyle Olması için</h5>
+                   <p>Suda ki dostlarımız için bu olması gerekiyor.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100"  alt="Third slide [800x400]" src="~/Upload/kirlisahil_1920x1080.jpg" data-holder-rendered="true">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Böyle Değil</h5>
+                    <p>Bunu yapan biziz.</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="media">
+        
+        <div class="media-body">
+            <h5 class="mt-0">Ürünlerimiz</h5>
+            Bizim tek amacımız doğayı korumak o yüzden bu siteden elde ediler kar ile sadece fidan alımı ve hayvan dostlarımıza bakım yapılmakdadır.
+           </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    @Html.Partial("_ProductList", Model)
+</div>
+
+
+
+
+
+
+

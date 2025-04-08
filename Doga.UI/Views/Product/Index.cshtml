@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Doga.UI.Entity.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container pb-5">
+    <h2>Yeni Ürün</h2>
+
+    <p>
+        @Html.ActionLink("Ürün Ekle", "Create", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categories.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsHome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsApproved)
+            </th>
+            <th style="width:135px"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <img src="~/Upload/@item.Image" width="70px" alt="Alternate Text" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categories.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @if (item.IsHome)
+                {
+                    <label class="badge badge-success">
+                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                        Yayında
+                    </label>
+                }
+                else
+                {
+                    <label class="badge badge-danger">
+                        <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                        Yayında değil
+                    </label>
+                }
+            </td>
+            <td>
+                @if (item.IsApproved)
+                {
+                <label class="badge badge-success">
+                    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                    Evet
+                </label>
+                }
+                else
+                {
+                <label class="badge badge-danger">
+                    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                    Hayır
+                </label>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.Id },new { @class="btn btn-primary btn-sm"})                 
+                @Html.ActionLink("Sil", "Delete", new { id = item.Id },new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+        }
+
+    </table>
+</div>

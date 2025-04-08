@@ -1,0 +1,28 @@
+﻿@using Doga.UI.Models;
+@model IEnumerable<ProductModel>
+
+
+<div class="row">
+
+    @foreach (var urun in Model)
+    {
+        
+        <div class=" col-md-4">
+            <div class="card mb-4">
+                <img class="card-img-top" src="/Upload/@urun.Image" alt="@urun.Name">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@urun.Id">@urun.Name</a>
+                    </h5>
+                    <p class="card-text pt-2 description">@urun.Description</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><i class="fa fa-try" aria-hidden="true"></i>@urun.Price</small>
+                    <a href="/Home/Details/@urun.Id" class="btn btn-success btn-sm float-right">Ürünü incele</a>
+                </div>
+            </div>
+        </div>
+        
+    }
+
+</div>

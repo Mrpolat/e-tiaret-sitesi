@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Doga.UI.Entity.Category>
+
+<ul class="list-group">
+    <li class="list-group-item">
+        <a href="/Home/List">Tüm Kategoriler</a>
+    </li>
+    
+    @foreach (var item in Model)
+    {
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="/Home/List/@item.Id">
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>@item.Name</a>
+            </li>
+
+        </ul>
+
+    }
+</ul>
+
